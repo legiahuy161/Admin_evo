@@ -1,0 +1,48 @@
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Chủ hộ</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table table-striped table-valign-middle">
+    <thead>
+        <tr>
+            <th>Tên nông dân</th>
+            <th>SĐT</th>
+            <th>Ấp</th>
+            <th>Xã</th>
+            <th>Huyện</th>
+            <th>Số gia súc</th>
+            <th>Loại</th>
+            <th>Id</th>
+            <th>Quan hệ chủ hộ</th>
+            <th>Mã nông dân</th>
+    </thead>
+    <!-- "ten_huyen": "Châu Thành",
+    "ten_nong_dan": "Thạch Seng",
+    "sdt": "0382881301",
+    "so_gia_suc": 3,
+    "ten_ap": "Phú Tân",
+    "loai": "D",
+    "id": 654,
+    "quan_he_chu_ho": "Thạch Thị Sà Phươl",
+    "ma_nong_dan": "102009",
+    "ten_xa": "Phú Tân" -->
+    <tbody>
+        <tr *ngFor="let info of chuho.nongDans">
+            <td>{{info.ten_nong_dan}}</td>
+            <td>{{info.sdt}}</td>
+            <td>{{info.ten_ap}}</td>
+            <td>{{info.ten_xa}}</td>
+            <td>{{info.ten_huyen}}</td>
+            <td>{{info.so_gia_suc}}</td>
+            <td>{{info.loai}}</td>
+            <td>{{info.id}}</td>
+            <td>{{info.quan_he_chu_ho}}</td>
+            <td>{{info.ma_nong_dan}}</td>
+        </tr>
+    </tbody>
+</table>

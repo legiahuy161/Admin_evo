@@ -1,0 +1,58 @@
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Bảng thông tin</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">
+                        <a href="#"></a>
+                    </li>
+                    <li class="breadcrumb-item active"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div *ngFor="let info of dan.nhoms" style="width: 300px; margin-left: 10px; margin-right: 10px;">
+                <div class="small-box bg-info">
+                    <div class="inner text-center">
+                        <h3>{{info.so_luong}}</h3>
+                        <p>{{info.ten}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div id="divChart">
+                <canvas id="myChart" width="30%" height="30%"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    var dan_name = [],
+        dan_so_luong = []
+
+    async function getData() {
+        const apiUrl = "http://localhost:8080/api/app/nhom_DanhSach/"
+        const response = await fetch(apiUrl)
+        const barchartData = await response.json()
+        console.log(barchartData)
+
+        const name = barchartData.data.map((x) => x.ten);
+        const soluong = barchartData.data.map((x) => x.so_luong)
+
+        console.log(name, soluong)
+
+        dan_name = name;
+        dan_so_luong = soluong;
+    }
+</script>

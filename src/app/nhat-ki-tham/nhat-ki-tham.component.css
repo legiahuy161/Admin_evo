@@ -1,0 +1,14 @@
+thead {
+    background-color: green;
+    border-right: 1px solid #dee2e6;
+}
+
+th,
+td {
+    border-right: 1px solid #dee2e6;
+}
+
+table {
+    width: 90%;
+    margin-left: 50px;
+}
